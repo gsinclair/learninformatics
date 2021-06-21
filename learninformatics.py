@@ -141,6 +141,7 @@ def test(number):
             if status != 'AC':
                 print_helpful_info(status, datain, dataout, expected)
         print_and_return_result_summary(results)
+    print()
     
 
 def judge(number):
@@ -170,6 +171,7 @@ def judge(number):
             print("TOKEN:", token(number))
         else:
             print('Better luck next time')
+    print()
 
 # --------------------------------------------------------------------------- #
 
