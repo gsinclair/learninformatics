@@ -2,7 +2,7 @@ import sys
 import json
 import base64
 import hashlib
-import urllib
+import urllib.request
 from io import StringIO
 from random import randint
 from multiprocessing import Process
@@ -24,7 +24,6 @@ def error(message):
 # --------------------------------------------------------------------------- #
 
 def update():
-    import urllib
     urllib.request.urlretrieve(DATA_URL, DATA_TXT_FILENAME)
 
 def load_data():
@@ -47,20 +46,27 @@ def load_data():
         update()
         return load_data()
 
-def load_data_directly():
-    with open('datasets/private.json') as f:
-        json_data = f.read()
-    return json.loads(json_data)
-
 # --------------------------------------------------------------------------- #
 
 def info():
-    print("Program version:", SOFTWARE_VERSION)
-    print("Data version:", -1)    # FIXME
+    def _groupby(seq, f):
+        result = dict()
+        for x in seq:
+            k = f(x)
+            if k in result:
+                result[k].append(x)
+            else:
+                result[k] = [x]
+        return result
     data = load_data()
-    print("Problem names:")       # TODO improve this
-    for x in data:
-        print(f" * {x}")
+    print("Program version:", SOFTWARE_VERSION)
+    print("Data version:   ", data["meta"]["data_version"])
+    print("Exercises available:")
+    x = list(data["meta"]["mapping"].keys())
+    x.sort
+    for l in _groupby(x, lambda s: s[0]).values():
+        print("  ", *l)
+
 
 
 def _get_function(number):
@@ -127,6 +133,7 @@ def test(number):
         e = sys.stderr
         print(f"Unable to access problem data for number '{number}'", file=e)
     else:
+        print(f"Running sample data for problem: {data['name']}")
         testdata, newline = data['samples'], data['newline']
         testdata = input_output_pairs(testdata, newline)
         results = run_and_collect_results(function, testdata)
@@ -149,6 +156,7 @@ def judge(number):
         e = sys.stderr
         print(f"Unable to access problem data for number '{number}'", file=e)
     else:
+        print(f"Running judging data for problem: {data['name']}")
         judgedata, newline = data['judge'], data['newline']
         judgedata = list(input_output_pairs(judgedata, newline))
         if 'autojudge' in data and data['autojudge'] != '':
