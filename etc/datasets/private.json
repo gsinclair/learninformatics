@@ -10,6 +10,9 @@
       "106": "jogging-1",
       "107": "tallest-2",
       "108": "fair-wage-1",
+      "201": "tallest-3",
+      "202": "shopping-2",
+      "203": "scrabble-tally",
       "206": "cute-numbers"
     }
   },
@@ -153,39 +156,37 @@
     ],
     "autojudge": ""
   },
-  "xxx": {
-    "name": "xxx",
+  "tallest-3": {
+    "name": "Who is the tallest? (3)",
     "newline": ".",
-    "samples": ["xxx", "xxx", "xxx", "xxx"],
+    "samples": ["8.165.177.172.180.175.179.181.180", "181",
+                "5.127.128.128.128.127", "128"],
     "judge": [
-      "xxx", "xxx",
-      "xxx", "xxx",
-      "xxx", "xxx",
-      "xxx", "xxx"
+      "6.4.7.2.4.9.1", "9",
+      "11.18.15.16.11.13.11.12.16.21.17.17", "21"
     ],
     "autojudge": ""
   },
-  "xxx": {
-    "name": "xxx",
-    "newline": ".",
-    "samples": ["xxx", "xxx", "xxx", "xxx"],
+  "shopping-2": {
+    "name": "Shopping (2)",
+    "newline": ",",
+    "samples": ["5,4,2.99,1,3.15,2,14.95,19,0.14,7,7.10", "97.37"],
     "judge": [
-      "xxx", "xxx",
-      "xxx", "xxx",
-      "xxx", "xxx",
-      "xxx", "xxx"
+      "5,4,2.99,1,3.15,2,14.95,18,0.14,7,7.10", "97.23",
+      "1,12,1.00", "12.0",
+      "3,995,127.89,417,35.21,552,700.14", "528410.4"
     ],
     "autojudge": ""
   },
-  "xxx": {
-    "name": "xxx",
+  "scrabble-tally": {
+    "name": "Scrabble tally",
     "newline": ".",
-    "samples": ["xxx", "xxx", "xxx", "xxx"],
+    "samples": ["10.Dotty.Albert.Albert.Charlie.Dotty.Albert.Dotty.Dotty.Dotty.Charlie",
+                "Albert: 3.Betty: 0.Charlie: 2.Dotty: 5"],
     "judge": [
-      "xxx", "xxx",
-      "xxx", "xxx",
-      "xxx", "xxx",
-      "xxx", "xxx"
+      "6.Albert.Albert.Albert.Albert.Albert.Albert", "Albert: 6.Betty: 0.Charlie: 0.Dotty: 0",
+      "6.Albert.Betty.Charlie.Charlie.Betty.Albert", "Albert: 2.Betty: 2.Charlie: 2.Dotty: 0",
+      "20.Albert.Dotty.Charlie.Betty.Dotty.Betty.Charlie.Albert.Albert.Betty.Charlie.Dotty.Charlie.Betty.Dotty.Albert.Albert.Charlie.Betty.Dotty", "Albert: 5.Betty: 5.Charlie: 5.Dotty: 5"
     ],
     "autojudge": ""
   },
