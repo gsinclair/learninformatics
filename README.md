@@ -1,3 +1,6 @@
+[![Run on
+Repl.it](https://repl.it/badge/github/gsinclair/learninformatics)](https://repl.it/github/gsinclair/learninformatics)
+
 The learninformatics project contains:
  * code (`learninformatics.py`) and
  * data (`DATA.txt`)
