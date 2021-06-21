@@ -1,5 +1,18 @@
 {
-  "ex-cutenumbers": {
+  "meta": {
+    "data_version": "1.0",
+    "mapping": {
+      "101": "triangle",
+      "102": "gradient",
+      "103": "tallest-1",
+      "104": "cheapest-tv",
+      "105": "shopping-1",
+      "106": "jogging-1",
+      "107": "tallest-2",
+      "108": "fair-wage-1"
+    }
+  },
+  "cutenumbers": {
     "name": "Cute Numbers",
     "newline": ".",
     "samples": ["8.2.3.0.1.4.0.0.0", "3", "4.14.5.0.1", "0"],
@@ -44,5 +57,171 @@
       "5"
     ],
     "autojudge": ["ladybugs", 2]
+  },
+  "triangle": {
+    "name": "Classify a triangle",
+    "newline": ".",
+    "samples": ["17.14.13", "scalene", "13.13.18", "isosceles", "5.5.5", "equilateral"],
+    "judge": [
+      "10.11.12", "scalene",
+      "9.9.9", "equilateral",
+      "4.5.4", "isosceles",
+      "4.4.5", "isosceles",
+      "5.4.4", "isosceles"
+    ],
+    "autojudge": ""
+  },
+  "gradient": {
+    "name": "Calculate a gradient",
+    "newline": ",",
+    "samples": ["5,1,10,3.5", "0.5",
+                "-2.76,-1.01,3.14159,-10.559", "-1.618",
+                "3.7,9.5,3.7,17", "undefined"],
+    "judge": ["5,1,10,3.5", "0.5",
+              "-2.76,-1.01,3.14159,-10.559", "-1.618",
+              "3.7,9.5,3.7,17", "undefined"],
+    "autojudge": ""
+  },
+  "tallest-1": {
+    "name": "Who is the tallest? (1)",
+    "newline": ".",
+    "samples": ["147.165.171.168", "171"],
+    "judge": [
+      "1.2.3.4", "4",
+      "4.3.2.1", "4",
+      "5.7.2.3", "7",
+      "7.2.5.3", "7"
+    ],
+    "autojudge": ""
+  },
+  "tallest-2": {
+    "name": "Who is the tallest? (1)",
+    "newline": ".",
+    "samples": ["147.165.171.168", "171"],
+    "judge": [
+      "1.2.3.4", "4",
+      "4.3.2.1", "4",
+      "5.7.2.3", "7",
+      "7.2.5.3", "7"
+    ],
+    "autojudge": ""
+  },
+  "cheapest-tv": {
+    "name": "The cheapest TV",
+    "newline": ".",
+    "samples": ["499.565.325.400.717", "325"],
+    "judge": [
+      "45.23.37.21.19", "19",
+      "23.19.37.45.23", "19",
+      "10453.9898.11567.451.5000", "451",
+      "21.68.54.32.12", "12"
+    ],
+    "autojudge": ""
+  },
+  "shopping-1": {
+    "name": "Shopping (1)",
+    "newline": ",",
+    "samples": ["6,2.50,8,1.75,3,87.88", "292.64"],
+    "judge": [
+      "3,1.50,2,5.45,2,1.10", "17.60",
+      "99,38.51,27,20.52,49,71.89", "7889.14"
+    ],
+    "autojudge": ""
+  },
+  "jogging-1": {
+    "name": "Jogging (1)",
+    "newline": ".",
+    "samples": ["100.50.300", "4", "700.20.750", "3"],
+    "judge": [
+      "65.8.100", "4",
+      "65.1.100", "35",
+      "65.2.100", "17",
+      "369.54.9998", "179"
+    ],
+    "autojudge": ""
+  },
+  "fair-wage-1": {
+    "name": "",
+    "newline": ",",
+    "samples": ["535.00,517.50,580.00,575.89,553.60,521.45", "62.50,580.00,no",
+                "535.00,517.50,570.00,570.00,553.60,521.45", "52.50,570.00,yes"],
+    "judge": [
+      "40.00,50.00,45.00,42.00,48.00,45.00", "10.00,50.00,no",
+      "13.00,13.00,13.00,13.00,13.00,13.00", "0.00,13.00,yes",
+      "210.00,205.00,207.00,207.50,209.50,208.43", "5.00,210.00,yes"
+    ],
+    "autojudge": ""
+  },
+  "xxx": {
+    "name": "xxx",
+    "newline": ".",
+    "samples": ["xxx", "xxx", "xxx", "xxx"],
+    "judge": [
+      "xxx", "xxx",
+      "xxx", "xxx",
+      "xxx", "xxx",
+      "xxx", "xxx"
+    ],
+    "autojudge": ""
+  },
+  "xxx": {
+    "name": "xxx",
+    "newline": ".",
+    "samples": ["xxx", "xxx", "xxx", "xxx"],
+    "judge": [
+      "xxx", "xxx",
+      "xxx", "xxx",
+      "xxx", "xxx",
+      "xxx", "xxx"
+    ],
+    "autojudge": ""
+  },
+  "xxx": {
+    "name": "xxx",
+    "newline": ".",
+    "samples": ["xxx", "xxx", "xxx", "xxx"],
+    "judge": [
+      "xxx", "xxx",
+      "xxx", "xxx",
+      "xxx", "xxx",
+      "xxx", "xxx"
+    ],
+    "autojudge": ""
+  },
+  "xxx": {
+    "name": "xxx",
+    "newline": ".",
+    "samples": ["xxx", "xxx", "xxx", "xxx"],
+    "judge": [
+      "xxx", "xxx",
+      "xxx", "xxx",
+      "xxx", "xxx",
+      "xxx", "xxx"
+    ],
+    "autojudge": ""
+  },
+  "xxx": {
+    "name": "xxx",
+    "newline": ".",
+    "samples": ["xxx", "xxx", "xxx", "xxx"],
+    "judge": [
+      "xxx", "xxx",
+      "xxx", "xxx",
+      "xxx", "xxx",
+      "xxx", "xxx"
+    ],
+    "autojudge": ""
+  },
+  "xxx": {
+    "name": "xxx",
+    "newline": ".",
+    "samples": ["xxx", "xxx", "xxx", "xxx"],
+    "judge": [
+      "xxx", "xxx",
+      "xxx", "xxx",
+      "xxx", "xxx",
+      "xxx", "xxx"
+    ],
+    "autojudge": ""
   }
 }

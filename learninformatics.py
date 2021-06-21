@@ -28,12 +28,17 @@ def download_data():
     urllib.request.urlretrieve(DATA_URL, DATA_TXT_FILENAME)
 
 def load_data():
+    """Return DATA if it's valid. Or load DATA.txt if it exists. Or download it
+       if it doesn't"""
     global DATA
     if DATA is not None:
         return DATA
     p = Path(DATA_TXT_FILENAME)
     if p.is_file():
-        x = DATA.encode('ascii')
+        x = p.read_text()
+        if len(x) < 100:
+            raise ValueError("Invalid data in DATA.txt -- too short")
+        x = x.encode('ascii')
         x = base64.decodebytes(x)
         x = x.decode('ascii')
         DATA = json.loads(x)
@@ -62,7 +67,7 @@ def _get_function(number):
     """Return ('ok', function) or ('notfound', None) or ('invalid', None)
        Invalid occurs when `number` is not three digits."""
     if 100 <= number < 1000:
-        function_name = f'ex{function_id}'
+        function_name = f'ex{number}'
         _locals = sys._getframe(2).f_locals
         if function_name in _locals:
             f = _locals[function_name]
@@ -96,47 +101,58 @@ def run(function_id, data=None):
         data = StringIO(data)
         f(data, sys.stdout)
 
-def samples(number):
+
+def _problem_data(number):
+    data = load_data()
+    try:
+        problem_id = data["meta"]["mapping"][str(number)]
+        return data[problem_id]
+    except KeyError:
+        return None
+
+
+def test(number):
     """For the given problem number, runs the user-supplied function with
        the samples data and prints a helpful message (i.e. detailing
        the data) if it doesn't pass.
        A number of (say) 302 implies a function name ex302."""
-    data = load_data()
-    status, f = _get_function(number)
+    assert type(number) == int
+
+    status, function = _get_function(number)
     if status != 'ok':
         return
-    
-    # FIXME
-    if name in data:
-        testdata, newline = data[name]['test'], data[name]['newline']
+
+    data = _problem_data(number)
+    if data is None:
+        e = sys.stderr
+        print(f"Unable to access problem data for number '{number}'", file=e)
+    else:
+        testdata, newline = data['samples'], data['newline']
         testdata = input_output_pairs(testdata, newline)
         results = run_and_collect_results(function, testdata)
         for status, datain, dataout, expected in results:
             if status != 'AC':
                 print_helpful_info(status, datain, dataout, expected)
-        print_result_summary(results)
-    else:
-        e = sys.stderr
-        print(f"Unable to access problem with the name '{name}'", file=e)
-        print("Valid names are:", file=e)
-        for x in data:
-            print(f" * {x}", file=e)
+        print_and_return_result_summary(results)
+    
 
 def judge(number):
     """For the given problem name, runs the user-supplied function with
        the prepared judging data and prints the result (AC, WA, ...) for
        each test case."""
-    data = load_data()
-    status, f = _get_function(number)
+    status, function = _get_function(number)
     if status != 'ok':
         return
 
-    # FIXME
-    if name in data:
-        judgedata, newline = data[name]['judge'], data[name]['newline']
+    data = _problem_data(number)
+    if data is None:
+        e = sys.stderr
+        print(f"Unable to access problem data for number '{number}'", file=e)
+    else:
+        judgedata, newline = data['judge'], data['newline']
         judgedata = list(input_output_pairs(judgedata, newline))
-        if 'autojudge' in data[name]:
-            function_name, n = data[name]['autojudge']
+        if 'autojudge' in data and data['autojudge'] != '':
+            function_name, n = data['autojudge']
             pairs = auto_generated_pairs(function_name, n)
             judgedata.extend(pairs)
         results = run_and_collect_results(function, judgedata)
@@ -146,12 +162,6 @@ def judge(number):
             print("TOKEN:", token(number))
         else:
             print('Better luck next time')
-    else:
-        e = sys.stderr
-        print(f"Unable to access problem with the name '{name}'", file=e)
-        print("Valid names are:", file=e)
-        for x in data:
-            print(f" * {x}", file=e)
 
 # --------------------------------------------------------------------------- #
 
