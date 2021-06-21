@@ -2,9 +2,11 @@ import sys
 import json
 import base64
 import hashlib
+import urllib
 from io import StringIO
 from random import randint
 from multiprocessing import Process
+from pathlib import Path
 
 # --------------------------------------------------------------------------- #
 
@@ -22,8 +24,8 @@ def error(message):
 # --------------------------------------------------------------------------- #
 
 def download_data():
-    import wget
-    wget.download(DATA_URL, 'DATA.txt')
+    import urllib
+    urllib.request.urlretrieve(DATA_URL, DATA_TXT_FILENAME)
 
 def load_data():
     global DATA
