@@ -2,11 +2,11 @@ import sys
 import json
 import base64
 import hashlib
-import urllib.request
 from io import StringIO
 from random import randint
 from multiprocessing import Process
 from pathlib import Path
+from urllib import request
 
 # --------------------------------------------------------------------------- #
 
@@ -24,7 +24,7 @@ def error(message):
 # --------------------------------------------------------------------------- #
 
 def update():
-    urllib.request.urlretrieve(DATA_URL, DATA_TXT_FILENAME)
+    request.urlretrieve(DATA_URL, DATA_TXT_FILENAME)
 
 def load_data():
     """Return DATA if it's valid. Or load DATA.txt if it exists. Or download it
