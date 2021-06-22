@@ -10,7 +10,7 @@ from urllib import request
 
 # --------------------------------------------------------------------------- #
 
-SOFTWARE_VERSION = "1.0"
+SOFTWARE_VERSION = "1.1"
 DATA_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/DATA.txt'
 DATA_TXT_FILENAME = 'DATA.txt'
 DATA = None           # This is set in the course of usage.
@@ -179,7 +179,7 @@ def run_and_collect_results(function, inoutpairs):
     """Runs the function on all available data in the generator inoutpairs.
        Returns a list of tuples: (status, instr, outstr, expected).
        The reported status is 'AC' or 'WA' or 'RTE'.
-       In future, status may be 'tle' or other values.
+       In future, status may be 'TLE' or other values.
        The strings 'outstr' and 'expected' are stripped for ease of
        comparison."""
     result = []
@@ -205,11 +205,12 @@ def input_output_pairs(data, newline):
        Each 'in' may be a string representing many lines, but compressed into
        a readable string using (say) full-stop as newline. The _newline_
        argument tells us what this special character is.
+       The same applies to each 'out' string.
        Yields tuples (in, out), where both are strings and in probably contains
        actual newline characters."""
     for i in range(0, len(data), 2):
-        a = '\n'.join(data[i].split(newline))
-        b = data[i+1]
+        a = '\n'.join(data[i+0].split(newline))
+        b = '\n'.join(data[i+1].split(newline))
         yield (a,b)
 
 def auto_generated_pairs(function_name, n):
