@@ -10,9 +10,11 @@ from urllib import request
 
 # --------------------------------------------------------------------------- #
 
-SOFTWARE_VERSION = "1.1"
+SOFTWARE_VERSION = "1.2"
 DATA_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/DATA.txt'
+CODE_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/learninformatics.py'
 DATA_TXT_FILENAME = 'DATA.txt'
+CODE_FILENAME = 'learninformatics.py'
 DATA = None           # This is set in the course of usage.
 
 # --------------------------------------------------------------------------- #
@@ -23,8 +25,22 @@ def error(message):
 
 # --------------------------------------------------------------------------- #
 
-def update():
-    request.urlretrieve(DATA_URL, DATA_TXT_FILENAME)
+def update(what='data'):
+    if what == 'data':
+        global DATA
+        Path(DATA_TXT_FILENAME).unlink()
+        request.urlretrieve(DATA_URL, DATA_TXT_FILENAME)
+        print("DATA.txt updated from GitHub")
+        DATA = None  # Force refresh
+        load_data()
+    elif what == 'code':
+        Path(CODE_FILENAME).unlink()
+        request.urlretrieve(CODE_URL, CODE_FILENAME)
+        print("Code updated from guthub. Reload to see changes (if any)")
+        print("Current code version (before update) is", SOFTWARE_VERSION)
+    else:
+        print("Argument to update() must be 'data' (default) or 'code'")
+        print("No action taken")
 
 def load_data():
     """Return DATA if it's valid. Or load DATA.txt if it exists. Or download it
