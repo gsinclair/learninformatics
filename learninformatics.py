@@ -281,6 +281,7 @@ class Interface:
         if pd is None:
             Impl.error(f"Unable to access problem data for number '{number}'")
         else:
+            print()
             print(f"Running sample data for problem: {pd['name']}")
             testdata, newline = pd['samples'], pd['newline']
             testdata = Judge.input_output_pairs(testdata, newline)
@@ -307,6 +308,7 @@ class Interface:
         if pd is None:
             Impl.eror(f"Unable to access problem data for number '{number}'")
         else:
+            print()
             print(f"Running judging data for problem: {pd['name']}")
             judgedata, newline = pd['judge'], pd['newline']
             judgedata = list(Judge.input_output_pairs(judgedata, newline))
@@ -318,7 +320,7 @@ class Interface:
             summary = Judge.print_and_return_result_summary(results)
             print()
             if all(x[0] == 'AC' for x in results):
-                print("TOKEN:", Impl.token(pd['name']))
+                print("TOKEN:", Impl.token(number, pd['name']))
             else:
                 print('Better luck next time')
         print()
@@ -380,11 +382,10 @@ class Impl:
             return ('invalid', None)
 
     @staticmethod
-    def token(codename):
-        """Return a six-digit hex token based on the problem codename as evidence
-           of success."""
-        string = str(number ** 3)
-        t = hashlib.sha224(string.encode('ascii')).hexdigest()[:6].upper()
+    def token(number, codename):
+        """Return a six-digit hex token based on the problem codename, appended to the
+           problem number, as evidence of success."""
+        t = hashlib.sha224(codename.encode('ascii')).hexdigest()[:6].upper()
         return f'{number}-{t}'
 
 # --------------------------------------------------------------------------- #
