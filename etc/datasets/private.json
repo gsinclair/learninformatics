@@ -1,6 +1,6 @@
 {
   "meta": {
-    "data_version": "1.5",
+    "data_version": "1.6",
     "mapping": {
       "101": "triangle",
       "102": "gradient",
@@ -196,10 +196,10 @@
   "area-calculator": {
     "name": "Area calculator",
     "newline": ",",
-    "samples": ["circle,4.6,traingle,12,5,parallelogram,19,4.5,square,19,rectangle,7.2,3.6,stop",
-                "14.45,30.0,85.5,361.0,25.92"],
+    "samples": ["circle,4.6,triangle,12,5,parallelogram,19,4.5,square,19,rectangle,7.2,3.6,stop",
+                "66.476,30.0,85.5,361.0,25.92"],
     "judge": [
-      "square,4,circle,4,rectangle,4,1,parallelogram,12.5,4.623",
+      "square,4,circle,4,rectangle,4,1,parallelogram,12.5,4.623,stop",
       "16.0,50.265,4.0,57.788"
     ],
     "autojudge": ""
@@ -223,10 +223,10 @@
                 "6.80.100.70.90.20.20.20", "1"
     ],
     "judge": [
-      "xxx", "xxx",
-      "xxx", "xxx",
-      "xxx", "xxx",
-      "xxx", "xxx"
+      "6.50.10.12.10.15.20", "0",
+      "6.50.10.60.10.10.10", "0",
+      "6.50.10.90.10.90.10", "1",
+      "6.50.10.90.10.10.90", "1"
     ],
     "autojudge": ""
   }
