@@ -1,17 +1,14 @@
 import sys
-import os.path
+import os
 import json
 import base64
-import hashlib
 from pathlib import Path
-from io import StringIO
-from random import randint
 
 PRIVATE_DATA_FILENAME = 'etc/datasets/private.json'
 DATA_TXT_FILENAME = 'DATA.txt'
 
 if Path(os.getcwd()).name != 'learninformatics':
-    print('ERROR: run etc/bundle-data.py from project root directory', file=os.stderr)
+    print('ERROR: run etc/bundle-data.py from project root directory', file=sys.stderr)
     exit()
 
 # This script has one purpose: read the JSON file containing all test data
