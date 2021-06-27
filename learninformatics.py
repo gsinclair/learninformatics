@@ -16,7 +16,7 @@ import urllib.request
 
 # --------------------------------------------------------------------------- #
 
-SOFTWARE_VERSION = "1.3"
+SOFTWARE_VERSION = "1.3.1"
 VERS_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/VERSION.json'
 DATA_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/DATA.txt'
 CODE_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/learninformatics.py'
@@ -306,7 +306,7 @@ class Interface:
 
         pd = data.problem_data(number)
         if pd is None:
-            Impl.eror(f"Unable to access problem data for number '{number}'")
+            Impl.error(f"Unable to access problem data for number '{number}'")
         else:
             print()
             print(f"Running judging data for problem: {pd['name']}")
@@ -362,7 +362,9 @@ class Impl:
     @staticmethod
     def lower_version(a, b):
         """'1.3', '1.4' --> True"""
-        return a.split('.') < b.split('.')
+        version_a = [int(x) for x in a.split('.')]
+        version_b = [int(x) for x in b.split('.')]
+        return version_a < version_b
 
     @staticmethod
     def get_function(number):
