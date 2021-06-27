@@ -16,12 +16,14 @@ import urllib.request
 
 # --------------------------------------------------------------------------- #
 
-SOFTWARE_VERSION = "1.3.1"
+SOFTWARE_VERSION = "1.3.2"
 VERS_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/VERSION.json'
 DATA_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/DATA.txt'
 CODE_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/learninformatics.py'
 DATA_FILENAME = 'DATA.txt'                # Todo 2 filenames
 CODE_FILENAME = 'learninformatics.py'
+
+DEBUG_LEARNINFORMATICS = False
 
 HELP = """
 Helpful commands:
@@ -415,6 +417,7 @@ class Judge:
                 else:
                     x = ('WA', datain, dataout, expected)
             except Exception as exc:
+                if DEBUG_LEARNINFORMATICS: print(exc)
                 x = ('RTE', datain, exc, expected)
             result.append(x)
             _in.close(); _out.close()
