@@ -320,10 +320,6 @@ class Interface:
             print(f"Running judging data for problem: {pd['name']}")
             judgedata, newline = pd['judge'], pd['newline']
             judgedata = list(Judge.input_output_pairs(judgedata, newline))
-            if 'autojudge' in pd and pd['autojudge'] != '':
-                function_name, n = pd['autojudge']
-                pairs = Judge.auto_generated_pairs(function_name, n)
-                judgedata.extend(pairs)
             results = Judge.run_and_collect_results(function, judgedata)
             summary = Judge.print_and_return_result_summary(results)
             print()
@@ -504,61 +500,6 @@ class Judge:
             else:
                 summary[status] = 1
         return summary
-
-# --------------------------------------------------------------------------- #
-
-# TODO Get rid of this by implementing fixed large test data.
-# Or maybe not. At least consider it.
-class AutoJudge:
-    """Implements functions to create random test data (and correct answers)
-       so that large data sets can be tested without having to write them
-       manually and clutter the data file."""
-
-    @staticmethod
-    def cutenumbers(n):
-        out = StringIO()
-        baselength = 10000 + randint(1000,2000) * n
-        endlength  = randint(2000,3000) * n
-        totallength = 1 + baselength + endlength
-        print(totallength, file=out)
-        print(randint(20,100), file=out)   # first one is nonzero
-        for _ in range(baselength):
-            if randint(1,20) == 1:
-                print(0, file=out)
-            else:
-                print(randint(0,100000), file=out)
-        for _ in range(endlength):
-            print(0, file=out)
-        return (out.getvalue(), f'{endlength}\n')
-
-    @staticmethod
-    def drought(n):
-        out = StringIO()
-        N = max(1000, n*200)
-        C = 1000000
-        avg = C // N
-        data = [randint(avg//2, avg*3) for _ in range(N)]
-        total, i = 0, 0
-        while total < C:
-            total += data[i]
-            i += 1
-        answer = i
-        print(N, file=out)
-        print(C, file=out)
-        print(*data, sep='\n', file=out)
-        return (out.getvalue(), f'{answer}\n')
-
-    @staticmethod
-    def ladybugs(n):
-        out = StringIO()
-        N = max(1000000, 100000 * n)
-        a, b = 1000000000, 0
-        print(N, file=out)
-        for _ in range(N):
-            x = randint(1,1000000000)
-            print(x, file=out)
-            a, b = min(a,x), max(b,x)
-        return (out.getvalue(), f'{b-a+1}\n')
 
 # --------------------------------------------------------------------------- #
 
