@@ -1,5 +1,6 @@
 import sys
 import json
+import yaml
 import base64
 import hashlib
 import shutil
@@ -16,7 +17,7 @@ import urllib.request
 
 # --------------------------------------------------------------------------- #
 
-SOFTWARE_VERSION = "1.4"
+SOFTWARE_VERSION = "2.0"
 VERS_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/VERSION.json'
 DATA_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/DATA.txt'
 CODE_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/learninformatics.py'
@@ -145,7 +146,7 @@ class LIData:
             x = x.encode('ascii')
             x = base64.decodebytes(x)
             x = x.decode('ascii')
-            return json.loads(x)
+            return yaml.load(x)
         else:
             return None
 
