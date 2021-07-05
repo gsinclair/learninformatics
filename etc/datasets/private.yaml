@@ -20,6 +20,8 @@ meta:
         '207': drought
         '208': cute-numbers
         '209': high-wire-walk
+        '210': even-photos-1
+        '211': even-photos-2
 cute-numbers:
     name: Cute Numbers
     newline: "."
@@ -286,6 +288,55 @@ high-wire-walk:
     - '1'
     - 5.50.10.90.10.10.90.
     - '2'
+even-photos-2:
+    name: 'Even numbers for photos! (1)'
+    newline: ";"
+    samples:
+    - 13;7;8;10;8;11;13;11;19;4;9;15;6;8;
+    - '1;4;2;;7:85'
+    - 6;5;3;4;8;6;3;
+    - '2;1;;3:14'
+    - 7;4;6;4;2;6;4;6;
+    - ';;0:0'
+    judge:
+    - 5;8;1;3;5;8;
+    - '3;;1:9'
+    - 11;2;2;2;2;2;2;2;2;2;2;2;
+    - ';;0:0'
+    - 15;19;2;11;13;9;2;2;19;2;17;2;11;11;11;11;
+    - '1;3;1;1;4;;9:132'
+even-photos-1:
+    name: 'Even numbers for photos! (2)'
+    newline: ";"
+    samples:
+    - 13;7;8;10;8;11;13;11;19;4;9;15;6;8;
+    - 'Length: 4;Starts: 5'
+    - 6;5;3;4;8;6;3;
+    - 'Length: 2;Starts: 1'
+    - 7;4;6;4;2;6;4;6;
+    - 'Length: 0;Starts: 0'
+    judge:
+    - 5;8;1;3;5;8;
+    - 'Length: 3;Starts: 2'
+    - 11;2;2;2;2;2;2;2;2;2;2;2;
+    - 'Length: 0;Starts: 0'
+    - 15;19;2;11;13;9;2;2;19;2;17;2;11;11;11;11;
+    - 'Length: 4;Starts: 12'
+    - 10;3;3;3;3;3;3;3;3;3;3;
+    - 'Length: 10;Starts: 1'
+xxx:
+    name: xxx
+    newline: ";"
+    samples:
+    - xxx
+    - xxx
+    judge:
+    - xxx
+    - xxx
+    - xxx
+    - xxx
+    - xxx
+    - xxx
 
 
 #xxx:
