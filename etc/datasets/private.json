@@ -12,17 +12,17 @@
       "108": "fair-wage-1",
       "201": "tallest-3",
       "202": "shopping-2",
-      "203": "scrabble-tally",
-      "204": "area-calculator",
-      "205": "drought",
-      "206": "cute-numbers",
-      "207": "high-wire-walk"
+      "205": "scrabble-tally",
+      "206": "area-calculator",
+      "207": "drought",
+      "208": "cute-numbers",
+      "209": "high-wire-walk"
     }
   },
   "cute-numbers": {
     "name": "Cute Numbers",
     "newline": ".",
-    "samples": ["8.2.3.0.1.4.0.0.0", "3", "4.14.5.0.1", "0"],
+    "samples": ["5.9.9.2.0.0", "2", "7.1.8.0.0.0.9.0", "1"],
     "judge": [
       "13.4.0.0.0.1.0.0.3.0.2.4.6.0",
       "1",
@@ -32,8 +32,7 @@
       "0",
       "22.4.0.0.0.1.0.0.0.0.0.0.0.0.0.3.0.2.4.6.0.0.0",
       "3"
-    ],
-    "autojudge": ["cutenumbers", 6]
+    ]
   },
   "drought": {
     "name": "Drought",
