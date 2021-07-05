@@ -11,8 +11,8 @@ from pathlib import Path
 import urllib.request
 
 # Coming improvements:
-#  * handle large tests in separate file
-#  * use Process to enable timeout enforcement
+#  * handle large tests in separate file [maybe not - perhaps separately in same yaml file]
+#  * use Process to enable timeout enforcement [no hurry for this]
 #  * improve printing of error and info messages (too many blank lines)
 
 # --------------------------------------------------------------------------- #
@@ -22,7 +22,7 @@ VERS_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/
 DATA_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/DATA.txt'
 CODE_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/learninformatics.py'
 BOOK_URL = 'bit.ly/hsifcb'
-DATA_FILENAME = 'DATA.txt'                # Todo 2 filenames
+DATA_FILENAME = 'DATA.txt'
 CODE_FILENAME = 'learninformatics.py'
 
 DEBUG_LEARNINFORMATICS = False
