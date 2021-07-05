@@ -331,6 +331,38 @@ class Interface:
 
 # --------------------------------------------------------------------------- #
 
+class Admin:
+    @staticmethod
+    def quiet_test(number):
+        """Run all available tests for exercise (number) and return True for complete
+           success, False otherwise. No output."""
+        assert type(number) == int
+        data = Interface.ensure_data()
+
+        status, function = Impl.get_function(number)
+        if status != 'ok':
+            return
+
+        pd = data.problem_data(number)
+        if pd is None:
+            Impl.error(f"Unable to access problem data for number '{number}'")
+        else:
+            testdata, judgedata, newline = pd['samples'], pd['judge'], pd['newline']
+            alldata = testdata + judgedata
+            alldata = Judge.input_output_pairs(alldata, newline)
+            results = Judge.run_and_collect_results(function, alldata)
+            return all(x[0] == 'AC' for x in results)
+
+    @staticmethod
+    def quiet_test_all():
+        """Run quiet_test(x) on all available exercise x."""
+        data = Interface.ensure_data()
+        for nnn in data.exercise_numbers():
+            if not Admin.quiet_test(int(nnn)):
+                print(f'x {nnn}')
+
+# --------------------------------------------------------------------------- #
+
 class Impl:
     @staticmethod
     def info(*lines):
