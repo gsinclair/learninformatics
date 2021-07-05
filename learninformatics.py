@@ -16,10 +16,11 @@ import urllib.request
 
 # --------------------------------------------------------------------------- #
 
-SOFTWARE_VERSION = "1.3.2"
+SOFTWARE_VERSION = "1.4"
 VERS_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/VERSION.json'
 DATA_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/DATA.txt'
 CODE_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/learninformatics.py'
+BOOK_URL = 'bit.ly/hsifcb'
 DATA_FILENAME = 'DATA.txt'                # Todo 2 filenames
 CODE_FILENAME = 'learninformatics.py'
 
@@ -198,13 +199,17 @@ class Interface:
             Impl.info('More recent data available; updating')
             data._force_update()
         else:
-            Impl.info(f'Your data is at the latest version ({data.version()})')
+            print(f'Your data is at the latest version ({data.version()})')
 
         if Impl.lower_version(SOFTWARE_VERSION, version_info['software']):
             Impl.info('More recent software available; updating')
             Impl.update_software()
         else:
-            Impl.info(f'Your software is at the latest version ({SOFTWARE_VERSION})')
+            print(f'Your software is at the latest version ({SOFTWARE_VERSION})')
+
+        print(f'The best available book version is {version_info["book"]}.')
+        print(f'  [Update from {BOOK_URL} if necessary.]')
+
 
     @staticmethod
     def force_update():
