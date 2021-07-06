@@ -1,7 +1,7 @@
 # vim: sw=4
 ---
 meta:
-    data_version: '2.0'
+    data_version: '2.0.1'
     mapping:
         '101': triangle
         '102': gradient
@@ -121,7 +121,7 @@ tallest-1:
     - 7.2.5.3.
     - '7'
 tallest-2:
-    name: Who is the tallest? (1)
+    name: Who is the tallest? (2)
     newline: "."
     samples:
     - 147.165.171.168.
