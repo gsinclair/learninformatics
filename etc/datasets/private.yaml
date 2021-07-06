@@ -1,7 +1,7 @@
 # vim: sw=4
 ---
 meta:
-    data_version: '2.0.1'
+    data_version: '2.1'
     mapping:
         '101': triangle
         '102': gradient

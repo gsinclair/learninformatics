@@ -1,6 +1,5 @@
 import sys
 import json
-import yaml
 import base64
 import hashlib
 import shutil
@@ -11,13 +10,14 @@ from pathlib import Path
 import urllib.request
 
 # Coming improvements:
-#  * handle large tests in separate file [maybe not - perhaps separately in same yaml file]
+#  * handle large tests in separate file [maybe not - perhaps separately in same
+#    yaml/json file]
 #  * use Process to enable timeout enforcement [no hurry for this]
 #  * improve printing of error and info messages (too many blank lines)
 
 # --------------------------------------------------------------------------- #
 
-SOFTWARE_VERSION = "2.0"
+SOFTWARE_VERSION = "2.1"
 VERS_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/VERSION.json'
 DATA_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/DATA.txt'
 CODE_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/learninformatics.py'
@@ -146,7 +146,7 @@ class LIData:
             x = x.encode('ascii')
             x = base64.decodebytes(x)
             x = x.decode('ascii')
-            return yaml.load(x)
+            return json.loads(x)
         else:
             return None
 
