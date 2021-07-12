@@ -22,6 +22,8 @@ meta:
         '209': high-wire-walk
         '210': even-photos-1
         '211': even-photos-2
+        '304': dont-touch-the-cracks
+        '512': stairway-to-heaven
 cute-numbers:
     name: Cute Numbers
     newline: "."
@@ -324,6 +326,40 @@ even-photos-2:
     - 'Length: 4;Starts: 12'
     - 10;3;3;3;3;3;3;3;3;3;3;
     - 'Length: 10;Starts: 1'
+dont-touch-the-cracks:
+    name: Don't touch the cracks
+    newline: ";"
+    samples:
+    - 18;
+    - '15;'
+    - 15;
+    - '14;'
+    judge:
+    - 500;
+    - '424;'
+    - 1000;
+    - '853;'
+    - 1849;
+    - '1574;'
+    - 10000;
+    - '8510;'
+stairway-to-heaven:
+    name: Stairway to heaven
+    newline: ";"
+    samples:
+    - 3;
+    - '3;'
+    - 5;
+    - '8;'
+    judge:
+    - 10;
+    - '89;'
+    - 30;
+    - '1346269;'
+    - 40;
+    - '165580141;'
+    - 100;
+    - '573147844013817084101;'
 xxx:
     name: xxx
     newline: ";"
@@ -337,6 +373,8 @@ xxx:
     - xxx
     - xxx
     - xxx
+
+
 
 
 #xxx:
