@@ -1,7 +1,7 @@
 # vim: sw=4
 ---
 meta:
-    data_version: '2.1'
+    data_version: '2.2'
     mapping:
         '101': triangle
         '102': gradient
@@ -22,7 +22,7 @@ meta:
         '209': high-wire-walk
         '210': even-photos-1
         '211': even-photos-2
-        '304': dont-touch-the-cracks
+        '212': dont-touch-the-cracks
         '512': stairway-to-heaven
 cute-numbers:
     name: Cute Numbers
