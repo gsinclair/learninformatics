@@ -16,13 +16,14 @@ meta:
         '203': sum-squares
         '204': check-invite
         '205': scrabble-tally
-        '206': area-calculator
-        '207': drought
-        '208': cute-numbers
-        '209': high-wire-walk
-        '210': even-photos-1
-        '211': even-photos-2
-        '212': dont-touch-the-cracks
+        '206': buried-treasure
+        '207': area-calculator
+        '208': drought
+        '209': cute-numbers
+        '210': high-wire-walk
+        '211': even-photos-1
+        '212': even-photos-2
+        '213': dont-touch-the-cracks
         '512': stairway-to-heaven
 cute-numbers:
     name: Cute Numbers
@@ -264,6 +265,23 @@ scrabble-tally:
     - 'Albert: 2.Betty: 2.Charlie: 2.Dotty: 0'
     - 20.Albert.Dotty.Charlie.Betty.Dotty.Betty.Charlie.Albert.Albert.Betty.Charlie.Dotty.Charlie.Betty.Dotty.Albert.Albert.Charlie.Betty.Dotty.
     - 'Albert: 5.Betty: 5.Charlie: 5.Dotty: 5'
+buried-treasure::
+    name: Buried treasure
+    newline: ";"
+    samples:
+    - 8;-7;6;N;North;W;N;East;E;S
+    - 9;-5;
+    - 8;-7;6;N;North;Go right;N;East;E;S
+    - Invalid directions;
+    judge:
+    - 9;-7;6;N;North;W;N;East;E;S;S
+    - 9;-6;
+    - 9;-7;6;N;North;W;N;East;E;S;W
+    - 8;-5;
+    - 9;-7;6;N;North;W;N;East;E;S;E
+    - 10;-5;
+    - 9;-7;6;N;North;W;N;East;E;S;Dunno
+    - Invalid directions;
 area-calculator:
     name: Area calculator
     newline: ";"
