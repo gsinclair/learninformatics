@@ -265,7 +265,7 @@ scrabble-tally:
     - 'Albert: 2.Betty: 2.Charlie: 2.Dotty: 0'
     - 20.Albert.Dotty.Charlie.Betty.Dotty.Betty.Charlie.Albert.Albert.Betty.Charlie.Dotty.Charlie.Betty.Dotty.Albert.Albert.Charlie.Betty.Dotty.
     - 'Albert: 5.Betty: 5.Charlie: 5.Dotty: 5'
-buried-treasure::
+buried-treasure:
     name: Buried treasure
     newline: ";"
     samples:
