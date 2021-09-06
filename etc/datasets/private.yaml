@@ -20,10 +20,10 @@ meta:
         '207': area-calculator
         '208': drought
         '209': cute-numbers
-        '210': high-wire-walk
-        '211': even-photos-1
-        '212': even-photos-2
-        '213': dont-touch-the-cracks
+        '210': even-photos-1
+        '211': even-photos-2
+        '304': dont-touch-the-cracks
+        '511': high-wire-walk
         '512': stairway-to-heaven
 cute-numbers:
     name: Cute Numbers
