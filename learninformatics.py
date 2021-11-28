@@ -77,6 +77,10 @@ def force_update():
     """Force update of data and code; to be used if something is wrong."""
     Interface.force_update()
 
+def details_for_angeni():
+    """Print (id :: number :: name) for each problem so that Angeni can tend her database."""
+    Interface.details_for_angeni()
+
 def run(*args):
     """Run a function with optional data given.
 
@@ -122,6 +126,10 @@ class LIData:
 
     def exercise_numbers(s):
         return list(s.data['meta']['mapping'].keys())
+
+    def problem_id(s, number):
+        codename =  s.data['meta']['mapping'][number]
+        return s.data[codename]['id']
 
     def problem_name(s, number):
         codename =  s.data['meta']['mapping'][number]
@@ -251,6 +259,14 @@ class Interface:
         print()
 
     @staticmethod
+    def details_for_angeni():
+        print()
+        data = Interface.ensure_data()
+        for n in data.exercise_numbers():
+            print(f'{data.problem_id(n)} :: {n} :: {data.problem_name(n)}')
+        print()
+
+    @staticmethod
     def run(function_id, data=None):
         """Runs the user-supplied or user-implied function with two arguments IN and OUT
            set to stdin and stdout respectively. This enables interactive running of user
@@ -324,7 +340,7 @@ class Interface:
             summary = Judge.print_and_return_result_summary(results)
             print()
             if all(x[0] == 'AC' for x in results):
-                print("TOKEN:", Impl.token(number, pd['name']))
+                print("TOKEN:", Impl.token(number, pd['id']))
             else:
                 print('Better luck next time')
         print()
@@ -423,7 +439,7 @@ class Impl:
     def token(number, codename):
         """Return a six-digit hex token based on the problem codename, appended to the
            problem number, as evidence of success."""
-        t = hashlib.sha224(codename.encode('ascii')).hexdigest()[:6].upper()
+        t = hashlib.sha256(codename.encode('ascii')).hexdigest()[:6].upper()
         return f'{number}-{t}'
 
 # --------------------------------------------------------------------------- #

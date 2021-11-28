@@ -27,6 +27,7 @@ meta:
         '512': stairway-to-heaven
 cute-numbers:
     name: Cute Numbers
+    id: p001
     newline: "."
     samples:
     - 5.9.9.2.0.0.
@@ -44,6 +45,7 @@ cute-numbers:
     - '3'
 drought:
     name: Drought
+    id: p002
     newline: "."
     samples:
     - 6.10.2.3.3.2.2.4.
@@ -59,6 +61,7 @@ drought:
     - '8'
 ladybugs:
     name: Ladybugs
+    id: p003
     newline: "."
     samples:
     - 6.7.2.9.3.6.3.
@@ -72,6 +75,7 @@ ladybugs:
     - '5'
 triangle:
     name: Classify a triangle
+    id: p004
     newline: "."
     samples:
     - 17.14.13.
@@ -93,6 +97,7 @@ triangle:
     - 'isosceles'
 gradient:
     name: Calculate a gradient
+    id: p005
     newline: ";"
     samples:
     - 5;1;10;3.5;
@@ -110,6 +115,7 @@ gradient:
     - 'undefined'
 tallest-1:
     name: Who is the tallest? (1)
+    id: p006
     newline: "."
     samples:
     - 147.165.171.168.
@@ -125,6 +131,7 @@ tallest-1:
     - '7'
 tallest-2:
     name: Who is the tallest? (2)
+    id: p007
     newline: "."
     samples:
     - 147.165.171.168.
@@ -140,6 +147,7 @@ tallest-2:
     - '7'
 cheapest-tv:
     name: The cheapest TV
+    id: p008
     newline: "."
     samples:
     - 499.565.325.400.717.
@@ -155,6 +163,7 @@ cheapest-tv:
     - '12'
 shopping-1:
     name: Shopping (1)
+    id: p009
     newline: ";"
     samples:
     - 6;2.50;8;1.75;3;87.88;
@@ -166,6 +175,7 @@ shopping-1:
     - '7889.14'
 jogging-1:
     name: Jogging (1)
+    id: p010
     newline: "."
     samples:
     - 100.50.300.
@@ -183,6 +193,7 @@ jogging-1:
     - '179'
 fair-wage-1:
     name: Fair wage (1)
+    id: p011
     newline: ";"
     samples:
     - 535.00;517.50;580.00;575.89;553.60;521.45;
@@ -198,6 +209,7 @@ fair-wage-1:
     - '5.0;210.0;yes'
 tallest-3:
     name: Who is the tallest? (3)
+    id: p012
     newline: "."
     samples:
     - 8.165.177.172.180.175.179.181.180.
@@ -211,6 +223,7 @@ tallest-3:
     - '21'
 shopping-2:
     name: Shopping (2)
+    id: p013
     newline: ";"
     samples:
     - 5;4;2.99;1;3.15;2;14.95;19;0.14;7;7.10;
@@ -224,6 +237,7 @@ shopping-2:
     - '528410.4'
 sum-squares:
     name: Sum of squares
+    id: p014
     newline: ";"
     samples:
     - 5;6.2;-1.7;4.29;3.185;-2;
@@ -237,6 +251,7 @@ sum-squares:
     - '25.0'
 check-invite:
     name: Check the invite list
+    id: p015
     newline: ";"
     samples:
     - Kevin;5;Jenny;Tonya;Sandy;Erin;Mike;
@@ -254,6 +269,7 @@ check-invite:
     - 'Todd is #1 on the list'
 scrabble-tally:
     name: Scrabble tally
+    id: p016
     newline: "."
     samples:
     - 10.Dotty.Albert.Albert.Charlie.Dotty.Albert.Dotty.Dotty.Dotty.Charlie.
@@ -267,6 +283,7 @@ scrabble-tally:
     - 'Albert: 5.Betty: 5.Charlie: 5.Dotty: 5'
 buried-treasure:
     name: Buried treasure
+    id: p017
     newline: ";"
     samples:
     - 8;-7;6;N;North;W;N;East;E;S
@@ -284,6 +301,7 @@ buried-treasure:
     - Invalid directions;
 area-calculator:
     name: Area calculator
+    id: p018
     newline: ";"
     samples:
     - circle;4.6;triangle;12;5;parallelogram;19;4.5;square;19;rectangle;7.2;3.6;stop;
@@ -293,6 +311,7 @@ area-calculator:
     - '16.0;50.265;4.0;57.788'
 high-wire-walk:
     name: High-wire walk
+    id: p019
     newline: "."
     samples:
     - 12.80.100.50.60.90.110.20.50.40.70.130.110.70.
@@ -310,6 +329,7 @@ high-wire-walk:
     - '2'
 even-photos-1:
     name: 'Even numbers for photos! (1)'
+    id: p020
     newline: ";"
     samples:
     - 13;7;8;10;8;11;13;11;19;4;9;15;6;8;
@@ -327,6 +347,7 @@ even-photos-1:
     - '1;3;1;1;4;Total: 132'
 even-photos-2:
     name: 'Even numbers for photos! (2)'
+    id: p021
     newline: ";"
     samples:
     - 13;7;8;10;8;11;13;11;19;4;9;15;6;8;
@@ -346,6 +367,7 @@ even-photos-2:
     - 'Length: 10;Starts: 1'
 dont-touch-the-cracks:
     name: Don't touch the cracks
+    id: p022
     newline: ";"
     samples:
     - 18;
@@ -363,6 +385,7 @@ dont-touch-the-cracks:
     - '8510;'
 stairway-to-heaven:
     name: Stairway to heaven
+    id: p023
     newline: ";"
     samples:
     - 3;
@@ -380,6 +403,7 @@ stairway-to-heaven:
     - '573147844013817084101;'
 xxx:
     name: xxx
+    id: p999
     newline: ";"
     samples:
     - xxx
