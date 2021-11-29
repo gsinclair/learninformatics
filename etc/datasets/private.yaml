@@ -1,7 +1,7 @@
 # vim: sw=4
 ---
 meta:
-    data_version: '2.3'
+    data_version: '2.4'
     mapping:
         '101': triangle
         '102': gradient
@@ -287,17 +287,17 @@ buried-treasure:
     newline: ";"
     samples:
     - 8;-7;6;N;North;W;N;East;E;S
-    - 9;-5;
+    - 9 -4;
     - 8;-7;6;N;North;Go right;N;East;E;S
     - Invalid directions;
     judge:
-    - 9;-7;6;N;North;W;N;East;E;S;S
-    - 9;-6;
-    - 9;-7;6;N;North;W;N;East;E;S;W
-    - 8;-5;
-    - 9;-7;6;N;North;W;N;East;E;S;E
-    - 10;-5;
-    - 9;-7;6;N;North;W;N;East;E;S;Dunno
+    - 8;-7;8;N;North;W;N;East;E;S;S
+    - 9 -6;
+    - 8;-7;8;N;North;W;N;East;E;S;W
+    - 8 -5;
+    - 8;-7;8;N;North;W;N;East;E;S;E
+    - 10 -5;
+    - 8;-7;8;N;North;W;N;East;E;S;Dunno
     - Invalid directions;
 area-calculator:
     name: Area calculator
