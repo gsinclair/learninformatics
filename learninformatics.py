@@ -17,7 +17,7 @@ import urllib.request
 
 # --------------------------------------------------------------------------- #
 
-SOFTWARE_VERSION = "2.2"
+SOFTWARE_VERSION = "2.3"
 VERS_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/VERSION.json'
 DATA_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/DATA.txt'
 CODE_URL = 'https://raw.githubusercontent.com/gsinclair/learninformatics/master/learninformatics.py'
@@ -439,7 +439,7 @@ class Impl:
     def token(number, codename):
         """Return a six-digit hex token based on the problem codename, appended to the
            problem number, as evidence of success."""
-        t = hashlib.sha256(codename.encode('ascii')).hexdigest()[:6].upper()
+        t = hashlib.sha1(codename.encode('ascii')).hexdigest()[:6].lower()
         return f'{number}-{t}'
 
 # --------------------------------------------------------------------------- #
