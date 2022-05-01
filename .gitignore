@@ -2,3 +2,4 @@ __pycache__
 answers.py
 tmp-test
 solutions.py
+.DS_Store
