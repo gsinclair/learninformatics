@@ -1,7 +1,7 @@
 # vim: sw=4
 ---
 meta:
-    data_version: '2.5'
+    data_version: '2.6.1'
     mapping:
         '101': triangle
         '102': gradient
@@ -23,13 +23,17 @@ meta:
         '210': even-photos-1
         '211': even-photos-2
         '212': diamond-hands
+        '213': all-goes-wrong
         '301': factors
         '302': jogging-2
         '303': collatz-1
+        '304': dont-touch-the-cracks
+        '305': add-ten
         '401': shopping-3
         '402': fair-wage-2
         '403': addition-carry
-        '304': dont-touch-the-cracks
+        '404': hearts-spades
+        '405': landscaping
         '511': high-wire-walk
         '512': stairway-to-heaven
 cute-numbers:
@@ -528,7 +532,26 @@ addition-carry:
     - '1;'
     - 5555;545;
     - '3;'
-
+add-ten:
+    name: Add Ten
+    id: p031
+    newline: ";"
+    samples:
+    - '36;'
+    - '4;'
+    - '77;'
+    - '3;'
+    - '11498;'
+    - '2;'
+    judge:
+    - '0;'
+    - '0;'
+    - '99549;'
+    - '1;'
+    - '22;'
+    - '8;'
+    - '-90;'
+    - '90;'
 xxx:
     name: xxx
     id: p999

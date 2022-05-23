@@ -19,7 +19,7 @@ if Path(os.getcwd()).name != 'learninformatics':
 def load_private_data():
     """Reads the YAML private data and returns a dictionary."""
     raw    = Path(PRIVATE_DATA_FILENAME).read_text()
-    cooked = yaml.load(raw)
+    cooked = yaml.safe_load(raw)
     return cooked
 
 def base64encode_private_data():
