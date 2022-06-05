@@ -1,7 +1,7 @@
 # vim: sw=4
 ---
 meta:
-    data_version: '2.6.2'
+    data_version: '2.6.3'
     mapping:
         '101': triangle
         '102': gradient
@@ -598,7 +598,28 @@ landscaping:
     - '86;'
     - '18;17;12;4;12;20;11;6;1;18;15;17;11;6;1;6;0;17;5;8;13;15;20;4;5;5;13;14;16;7;19;16;0;19;15;17;3;'
     - '258;'
-
+all-goes-wrong:
+    name: All Goes Wrong
+    id: p034
+    newline: ";"
+    samples:
+    - '16;EENWWWNWSSWSWNNW;'
+    - '7;'
+    - '18;WSSEWNENSNNSESWWWW;'
+    - '11;'
+    judge:
+    - '16;EENWWWNWSSWSWNNW;'
+    - '7;'
+    - '18;WSSEWNENSNNSESWWWW;'
+    - '11;'
+    - '66;EWEEWSNENENNNWNSNENEWESSWNNNSWSSNNWNNWENWSEWWENWNSWWWNWNWNNENEEENE;'
+    - '40;'
+    - '58;WSSWWEENENWENSNNWWSEENSSEEENSWWEWWNWWNNSWENNSNWSSSEWSSNWNE;'
+    - '22;'
+    - '30;NWSNNENESSWNSESSWEEWSWEWSSSWWW;'
+    - '17;'
+    - '10;SNNNNEEEEE;'
+    - '9;'
 xxx:
     name: xxx
     id: p999
